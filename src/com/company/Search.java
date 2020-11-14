@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Search {
     public ArrayList<Student> idNumber = new ArrayList<>();
 
-    public Search(ArrayList<Student> IDNumber) {
-        this.idNumber = IDNumber;
+    public Search(ArrayList<Student> idNumber) {
+        this.idNumber = idNumber;
     }
     public int linSearch(Student obj) {
         int index = -1;
