@@ -25,8 +25,13 @@ public class Test {
         Search s2 = new Search(idNumber);
         int r2 = rand.nextInt(idNumber.size());
         System.out.println("Искомый студент: " + idNumber.get(r2).getName());
+        Collections.sort(idNumber, new Comparator<Student>(){
+            public int compare(Student o1, Student o2) {
+                return o1.getId() - o2.getId();
+            }
+        });
         long startTime2 = System.nanoTime();
-        int number2 = s1.binSearch(r2, 0, idNumber.size(), -1);
+        int number2 = s1.binSearch(idNumber.get(r2), 0, idNumber.size());
         long endTime2 = System.nanoTime();
         System.out.println("Номер искомого студента в коллекции: " + number2);
         System.out.println(idNumber.get(number2 - 1).toString());
